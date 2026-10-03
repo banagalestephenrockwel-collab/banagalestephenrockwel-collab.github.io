@@ -1,2 +1,2 @@
-# https-github.com-banagalestephenrockwel-collab.github.io
+# banagalestephenrockwel-collab.github.io
 Improved website
