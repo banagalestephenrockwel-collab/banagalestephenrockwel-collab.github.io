@@ -1,0 +1,1958 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none; 
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 10rem;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color:black;
+    color:white;
+}
+
+header{
+    margin-top:20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background-color:transparent;
+    filter:drop-shadow(10px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 3rem;
+    color:dodgerblue;
+    font-weight:800;
+    cursor:pointer;
+    transition:0.5s ease;
+    
+}
+
+.logo:hover{
+    transform:scale(1.1);
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:4rem;
+}
+
+nav a{
+    display:inline-block;
+    font-size: 1.5rem;
+    color:white;
+    margin-left:6 rem;
+    padding:1rem ;
+    font-weight:500;
+    transition:0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active{
+    color:dodgerblue;
+    border-bottom: 3px solid dodgerblue;
+}
+
+
+.menu-toggle{
+    display: none;
+    font-size: 3.5rem;
+    color: dodgerblue;
+    cursor: pointer;
+    user-select: none;
+}
+
+
+@media (max-width: 995px){
+
+    html{
+        scroll-padding-top: 8rem;
+    }
+
+    /* Header */
+    header{
+        margin-top: 0;
+        padding: 1.5rem 5%;
+        background-color: black;
+    }
+
+    .logo{
+        font-size: 2.6rem;
+    }
+
+    .menu-toggle{
+        display: block;
+    }
+
+    nav{
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 70%;
+        max-width: 28rem;
+        padding: 1rem 0;
+        background-color: black;
+        border-left: 0.3rem solid dodgerblue;
+        border-bottom: 0.3rem solid dodgerblue;
+        border-bottom-left-radius: 2rem;
+    }
+
+    nav.active{
+        display: flex;
+    }
+
+    nav a{
+        font-size: 2rem;
+        margin: 0;
+        padding: 1.5rem 2.5rem;
+        border-bottom: none;
+    }
+
+    nav a:hover,
+    nav a.active{
+        border-bottom: none;
+        border-left: 0.4rem solid dodgerblue;
+        background-color: rgba(30, 144, 255, 0.1);
+    }
+
+   
+    section{
+        min-height: auto;
+        padding: 10rem 5% 4rem;
+    }
+
+    .heading{
+        font-size: 3.6rem;
+        margin-bottom: 3rem;
+    }
+
+    
+    .home{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        gap: 3rem;
+        padding-top: 11rem;
+    }
+
+    .home-img{
+        width: 60vw;
+        height: 60vw;
+        max-width: 28rem;
+        max-height: 28rem;
+    }
+
+    .home .home-content h1{
+        font-size: 3.2rem;
+        justify-content: center;
+    }
+
+    .home-content p{
+        font-size: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .social-icons{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .social-icons a{
+        margin: 2rem 0.8rem;
+    }
+
+    /* Skills */
+    .services,
+    .badges,
+    .projects,
+    .contact{
+        padding-top: 10rem;
+    }
+
+    .service-card{
+        flex: 0 0 22rem;
+        padding: 3rem 2rem;
+    }
+
+    .service-card h3{
+        font-size: 2rem;
+    }
+
+    /* About */
+    .about-wrapper{
+        flex-direction: column;
+        gap: 5rem;
+    }
+
+    .about-img{
+        flex: none;
+        width: 75%;
+        margin-left: 2rem;      
+    }
+
+    .about-title{
+        font-size: 3.6rem;
+        text-align: center;
+    }
+
+    .about-line{
+        margin: 1.5rem auto 2.5rem;
+    }
+
+    .about-info p{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .about-list li{
+        font-size: 1.5rem;
+        align-items: flex-start;
+    }
+
+   
+    .projects-scroll{
+        flex-direction: column;   
+        align-items: center;
+        overflow-x: visible;
+    }
+
+    .project-card{
+        flex:none;
+        max-width:32rem;
+        width:100%;
+    }
+
+    .project-card h3{
+        font-size: 2rem;
+    }
+
+    /* Badges */
+    .badges-card{
+        flex: 0 0 24rem;
+        padding: 3rem 2rem;
+    }
+
+    .badges-icon{
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .badges-icon img{
+        width: 8.5rem;
+        height: 8.5rem;
+    }
+
+    .badges-card h3{
+        font-size: 1.8rem;
+    }
+
+    /* Contact */
+    .contact-wrapper{
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .contact-card{
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+
+    .contact-card p{
+        font-size: 1.4rem;
+        word-break: break-word;
+    }
+
+    .contact-icon{
+        width: 5rem;
+        height: 5rem;
+        font-size: 2.2rem;
+    }
+
+    .contact-btn{
+        width: 100%;
+        align-self: stretch;
+    }
+
+    /* Footer */
+    .footer{
+        padding: 2.5rem 5%;
+    }
+
+    .footer p{
+        font-size: 1.3rem;
+    }
+}
+
+
+@media (max-width: 480px){
+
+    .heading{
+        font-size: 3rem;
+    }
+
+    .home .home-content h1{
+        font-size: 2.8rem;
+        align-content: left;
+    }
+
+    .about-title{
+        font-size: 3rem;
+    }
+
+    .service-card{
+        flex: 0 0 19rem;
+    }
+
+    .project-card,
+    .badges-card{
+        flex: 0 0 22rem;
+    }
+}
+
+@media (max-width:995px){
+    .mobile-br{
+        display: inline;
+    }
+}
+
+
+nav.active{
+    display:flex;
+}
+
+nav a{
+    font-size:2rem;
+    gap:4rem;
+}
+
+
+
+section{
+    min-height:100vh;
+    padding:5rem 9% 5rem;
+}
+
+.home{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8rem;
+    background-color:black;
+}
+
+.home .home-content h1{
+    font-size:6rem;
+    font-weight:700;
+    line-height:1.3;
+    
+}
+
+.text-typing{
+    color:dodgerblue;
+}
+
+
+.home-content h3{
+    font-size:4rem;
+   margin-bottom:1rem;
+    font-weight:700;
+}
+
+.home-img{
+    position:relative;
+    flex-shrink: 0;
+    width:32vw;
+    height:32vw;
+    aspect-ratio: 1 / 1;
+    overflow:hidden;
+    border-radius:50%;
+    box-shadow: 0 0 25px solid dodgerblue;
+    cursor:pointer;
+    transition: 0.2s linear;
+}
+
+.home-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         
+    display: block;
+    transition: 0.2s linear;
+}
+
+.home-img img:hover{
+    font-size: 1.8rem;
+    font-weight:500;
+    transform:scale(1.05);
+}
+
+.social-icons a{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    width:4rem;
+    height:4rem;
+    background-color:transparent;
+    border:0.2rem solid dodgerblue;
+    font-size:2rem;
+    border-radius:50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+color:white;
+}
+
+.social-icons a:hover{
+   
+    color:black;
+    transform:scale(1.3)translateY(-0.5rem);
+    background-color: dodgerblue;
+    box-shadow: 0 0 25px dodgerblue;
+}
+
+.about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+    width: 100%;
+}
+
+/* Photo with offset frame */
+.about-img{
+    position: relative;
+    flex: 0 0 38%;
+    aspect-ratio: 1 / 1;
+}
+
+.about-img::before{
+    content: "";
+    position: absolute;
+    top: -2rem;
+    left: -2rem;
+    width: 100%;
+    height: 100%;
+    border: 0.2rem solid dodgerblue;  
+    z-index: 0;
+    transition: 0.3s ease;
+}
+
+.about-img img{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.about-img:hover::before{
+    top: -1rem;
+    left: -1rem;
+    box-shadow: 0 0 25px dodgerblue;
+}
+
+/* Text side */
+.about-title{
+    font-size: 5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.about-title span{
+    color: dodgerblue;
+}
+
+.about-line{
+    width: 8rem;
+    height: 0.4rem;
+    background-color: dodgerblue;
+    margin: 1.5rem 0 3rem;
+}
+
+.about-info p{
+    font-size: 1.7rem;
+    line-height: 1.8;
+    color: #d0d0d0;
+    margin-bottom: 3rem;
+}
+
+.about-list{
+    list-style: none;
+}
+
+.about-list li{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.7rem;
+    margin-bottom: 1.8rem;
+}
+
+
+.check{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border: 0.2rem solid dodgerblue;
+    border-radius: 0.4rem;
+    color: dodgerblue;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+
+@media (max-width: 995px){
+    .about-wrapper{
+        flex-direction: column;
+        gap: 6rem;
+    }
+
+    .about-img{
+        flex: none;
+        width: 70%;
+    }
+}
+
+.type{
+    color:dodgerblue;
+}
+
+.skills-content{
+    display:flex;
+    justify-content:center;
+    font-size:3rem;
+}
+
+.heading{
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.heading span{
+    color: dodgerblue;
+}
+
+.services{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12rem;
+    text-align: center;
+}
+
+.skills-scroll{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 3rem;
+    width: 100%;
+    overflow-x: auto;
+    padding: 3rem 1rem 4rem;
+    scroll-snap-type: x mandatory;
+}
+
+.service-card{
+    flex: 0 0 28rem;
+    scroll-snap-align: center;
+    padding: 4rem 3rem;
+    border: 0.2rem solid rgba(30, 144, 255, 0.35);
+    border-radius: 2.5rem;
+    background-color: rgba(30, 144, 255, 0.05);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.service-card:hover{
+    border-color: dodgerblue;
+    background-color: rgba(30, 144, 255, 0.12);
+    transform: translateY(-1rem);
+    box-shadow: 0 0 25px dodgerblue;
+}
+
+.service-icon{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 8rem;
+    border: 0.2rem solid dodgerblue;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+    transition: 0.3s ease;
+}
+
+.service-icon img{
+    width: 4.5rem;
+    height: 4.5rem;
+    object-fit: contain;
+}
+
+.service-card:hover .service-icon{
+    background-color: dodgerblue;
+    box-shadow: 0 0 25px dodgerblue;
+}
+
+.service-card h3{
+    font-size: 2.4rem;
+    color: dodgerblue;
+    margin-bottom: 1rem;
+}
+
+.skills-scroll::-webkit-scrollbar{
+    height: 0.8rem;
+}
+
+.skills-scroll::-webkit-scrollbar-track{
+    background: rgba(30, 144, 255, 0.1);
+    border-radius: 1rem;
+}
+
+.skills-scroll::-webkit-scrollbar-thumb{
+    background: dodgerblue;
+    border-radius: 1rem;
+}
+
+.projects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12rem;
+}
+
+.projects-scroll{
+    display: flex;
+    flex-direction: row;      
+    flex-wrap: nowrap;
+    gap: 3rem;
+    width: 100%;
+    overflow-x: auto;
+    padding: 3rem 1rem 4rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.projects-scroll::-webkit-scrollbar{
+    display: none;
+}
+
+.project-card{
+    flex: 0 0 32rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 3rem;
+    color: white;
+    border: 0.2rem solid rgba(30, 144, 255, 0.35);
+    border-radius: 2.5rem;
+    background-color: rgba(30, 144, 255, 0.05);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.project-card:hover{
+    border-color: dodgerblue;
+    background-color: rgba(30, 144, 255, 0.12);
+    transform: translateY(-1rem);
+    box-shadow: 0 0 25px dodgerblue;
+}
+
+.project-icon{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 8rem;
+    border: 0.2rem solid dodgerblue;
+    border-radius: 50%;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    transition: 0.3s ease;
+}
+
+.project-card:hover .project-icon{
+    background-color: dodgerblue;
+    box-shadow: 0 0 25px dodgerblue;
+}
+
+.project-card h3{
+    font-size: 2.4rem;
+    color: dodgerblue;
+    margin-bottom: 1rem;
+}
+
+.project-card p{
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: #d0d0d0;
+    margin-bottom: 2rem;
+}
+
+.project-link{
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: dodgerblue;
+}
+
+.badges{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12rem;
+    text-align: center;
+}
+
+.badge-scroll{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 3rem;
+    width: 100%;
+    overflow-x: auto;
+    padding: 3rem 1rem 4rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.badge-scroll::-webkit-scrollbar{
+    display: none;
+}
+
+.badges-card{
+    flex: 0 0 28rem;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 3rem;
+    border: 0.2rem solid rgba(30, 144, 255, 0.35);
+    border-radius: 2.5rem;
+    background-color: rgba(30, 144, 255, 0.05);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.badges-card:hover{
+    border-color: dodgerblue;
+    background-color: rgba(30, 144, 255, 0.12);
+    transform: translateY(-1rem);
+    box-shadow: 0 0 25px dodgerblue;
+}
+
+.badges-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 14rem;
+    height: 14rem;
+    border: 0.2rem solid dodgerblue;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.badges-icon img{
+    width: 10rem;
+    height: 10rem;
+    object-fit: contain;
+}
+
+.badges-card:hover .badges-icon{
+    box-shadow: 0 0 25px dodgerblue;
+}
+
+.badges-card h3{
+    font-size: 2rem;
+    line-height: 1.4;
+    color: dodgerblue;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12rem;
+}
+
+.contact-wrapper{
+    display: flex;
+    gap: 5rem;
+    width: 100%;
+    align-items: stretch;
+}
+
+.contact-info{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.contact-card{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.5rem 3rem;
+    color: white;
+    border: 0.2rem solid rgba(30, 144, 255, 0.35);
+    border-radius: 2.5rem;
+    background-color: rgba(30, 144, 255, 0.05);
+    transition: 0.3s ease;
+}
+
+.contact-card:hover{
+    border-color: dodgerblue;
+    background-color: rgba(30, 144, 255, 0.12);
+    transform: translateY(-0.5rem);
+    box-shadow: 0 0 25px dodgerblue;
+}
+
+.contact-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 6rem;
+    height: 6rem;
+    border: 0.2rem solid dodgerblue;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    transition: 0.3s ease;
+}
+
+.contact-card:hover .contact-icon{
+    background-color: dodgerblue;
+    box-shadow: 0 0 25px dodgerblue;
+}
+
+.contact-card h3{
+    font-size: 2rem;
+    color: dodgerblue;
+    margin-bottom: 0.3rem;
+}
+
+.contact-card p{
+    font-size: 1.6rem;
+    color: #d0d0d0;
+}
+
+.contact-form{
+    flex: 1.3;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width: 100%;
+    padding: 1.8rem 2.5rem;
+    font-size: 1.6rem;
+    color: white;
+    background-color: rgba(30, 144, 255, 0.05);
+    border: 0.2rem solid rgba(30, 144, 255, 0.35);
+    border-radius: 1.5rem;
+    transition: 0.3s ease;
+    resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+    color: #888;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color: dodgerblue;
+    box-shadow: 0 0 15px dodgerblue;
+}
+
+.contact-btn{
+    align-self: flex-start;
+    padding: 1.5rem 4rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+    background-color: dodgerblue;
+    border-radius: 5rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.contact-btn:hover{
+    transform: translateY(-0.5rem);
+    box-shadow: 0 0 25px dodgerblue;
+}
+
+@media (max-width: 995px){
+    .contact-wrapper{
+        flex-direction: column;
+    }
+}
+
+.footer{
+    display: flex;
+    justify-content: center;   
+    align-items: center;       
+    text-align: center;
+    padding: 3rem 9%;
+    border-top: 0.2rem solid rgba(30, 144, 255, 0.35);
+}
+
+.footer p{
+    font-size: 1.6rem;
+    color: #d0d0d0;
+}
+
+@media (max-width: 995px){
+    .home .home-content h1{
+        font-size: 2.6rem;
+        line-height: 1.3;
+    }
+
+    .name-line{
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px){
+    .home .home-content h1{
+        font-size: 2.3rem;
+    }
+}
+
+.reveal{
+    opacity: 0;
+    transform: translateY(6rem);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.reveal.delay-1{ transition-delay: 0.1s; }
+.reveal.delay-2{ transition-delay: 0.2s; }
+.reveal.delay-3{ transition-delay: 0.3s; }
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none; 
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 10rem;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color:black;
+    color:white;
+}
+
+header{
+    margin-top:20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background-color:transparent;
+    filter:drop-shadow(10px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 3rem;
+    color:dodgerblue;
+    font-weight:800;
+    cursor:pointer;
+    transition:0.5s ease;
+    
+}
+
+.logo:hover{
+    transform:scale(1.1);
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:4rem;
+}
+
+nav a{
+    display:inline-block;
+    font-size: 1.5rem;
+    color:white;
+    margin-left:6 rem;
+    padding:1rem ;
+    font-weight:500;
+    transition:0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active{
+    color:dodgerblue;
+    border-bottom: 3px solid dodgerblue;
+}
+
+/* ===== Hamburger: nakatago sa desktop ===== */
+.menu-toggle{
+    display: none;
+    font-size: 3.5rem;
+    color: dodgerblue;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* ===== TABLET AT PHONE (hanggang 995px) ===== */
+@media (max-width: 995px){
+
+    html{
+        scroll-padding-top: 8rem;
+    }
+
+    /* Header */
+    header{
+        margin-top: 0;
+        padding: 1.5rem 5%;
+        background-color: black;
+    }
+
+    .logo{
+        font-size: 2.6rem;
+    }
+
+    .menu-toggle{
+        display: block;
+    }
+
+    nav{
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 70%;
+        max-width: 28rem;
+        padding: 1rem 0;
+        background-color: black;
+        border-left: 0.3rem solid dodgerblue;
+        border-bottom: 0.3rem solid dodgerblue;
+        border-bottom-left-radius: 2rem;
+    }
+
+    nav.active{
+        display: flex;
+    }
+
+    nav a{
+        font-size: 2rem;
+        margin: 0;
+        padding: 1.5rem 2.5rem;
+        border-bottom: none;
+    }
+
+    nav a:hover,
+    nav a.active{
+        border-bottom: none;
+        border-left: 0.4rem solid dodgerblue;
+        background-color: rgba(30, 144, 255, 0.1);
+    }
+
+    /* Mga section */
+    section{
+        min-height: auto;
+        padding: 10rem 5% 4rem;
+    }
+
+    .heading{
+        font-size: 3.6rem;
+        margin-bottom: 3rem;
+    }
+
+    /* Home */
+    .home{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        gap: 3rem;
+        padding-top: 11rem;
+    }
+
+    .home-img{
+        width: 60vw;
+        height: 60vw;
+        max-width: 28rem;
+        max-height: 28rem;
+    }
+
+    .home .home-content h1{
+        font-size: 3.2rem;
+    }
+
+    .home-content p{
+        font-size: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .social-icons{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .social-icons a{
+        margin: 2rem 0.8rem;
+    }
+
+    /* Skills */
+    .services,
+    .badges,
+    .projects,
+    .contact{
+        padding-top: 10rem;
+    }
+
+    .service-card{
+        flex: 0 0 22rem;
+        padding: 3rem 2rem;
+    }
+
+    .service-card h3{
+        font-size: 2rem;
+    }
+
+    /* About */
+    .about-wrapper{
+        flex-direction: column;
+        gap: 5rem;
+    }
+
+    .about-img{
+        flex: none;
+        width: 75%;
+        margin-left: 2rem;      
+    }
+
+    .about-title{
+        font-size: 3.6rem;
+        text-align: center;
+    }
+
+    .about-line{
+        margin: 1.5rem auto 2.5rem;
+    }
+
+    .about-info p{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .about-list li{
+        font-size: 1.5rem;
+        align-items: flex-start;
+    }
+
+   
+    .projects-scroll{
+        flex-direction: column;   
+        align-items: center;
+        overflow-x: visible;
+    }
+
+    .project-card{
+        flex:none;
+        max-width:32rem;
+        width:100%;
+    }
+
+    .project-card h3{
+        font-size: 2rem;
+    }
+
+    /* Badges */
+    .badges-card{
+        flex: 0 0 24rem;
+        padding: 3rem 2rem;
+    }
+
+    .badges-icon{
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .badges-icon img{
+        width: 8.5rem;
+        height: 8.5rem;
+    }
+
+    .badges-card h3{
+        font-size: 1.8rem;
+    }
+
+    /* Contact */
+    .contact-wrapper{
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .contact-card{
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+
+    .contact-card p{
+        font-size: 1.4rem;
+        word-break: break-word;
+    }
+
+    .contact-icon{
+        width: 5rem;
+        height: 5rem;
+        font-size: 2.2rem;
+    }
+
+    .contact-btn{
+        width: 100%;
+        align-self: stretch;
+    }
+
+    /* Footer */
+    .footer{
+        padding: 2.5rem 5%;
+    }
+
+    .footer p{
+        font-size: 1.3rem;
+    }
+}
+
+
+@media (max-width: 480px){
+
+    .heading{
+        font-size: 3rem;
+    }
+
+    .home .home-content h1{
+        font-size: 2.8rem;
+    }
+
+    .about-title{
+        font-size: 3rem;
+    }
+
+    .service-card{
+        flex: 0 0 19rem;
+    }
+
+    .project-card,
+    .badges-card{
+        flex: 0 0 22rem;
+    }
+}
+
+@media (max-width:995px){
+    .mobile-br{
+        display: inline;
+    }
+}
+
+
+nav.active{
+    display:flex;
+}
+
+nav a{
+    font-size:2rem;
+    gap:4rem;
+}
+
+
+
+section{
+    min-height:100vh;
+    padding:5rem 9% 5rem;
+}
+
+.home{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8rem;
+    background-color:black;
+}
+
+.home .home-content h1{
+    font-size:6rem;
+    font-weight:700;
+    line-height:1.3;
+    
+}
+
+.text-typing{
+    color:dodgerblue;
+}
+
+
+.home-content h3{
+    font-size:4rem;
+   margin-bottom:1rem;
+    font-weight:700;
+}
+
+.home-img{
+    position:relative;
+    flex-shrink: 0;
+    width:32vw;
+    height:32vw;
+    aspect-ratio: 1 / 1;
+    overflow:hidden;
+    border-radius:50%;
+    box-shadow: 0 0 25px solid dodgerblue;
+    cursor:pointer;
+    transition: 0.2s linear;
+}
+
+.home-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         
+    display: block;
+    transition: 0.2s linear;
+}
+
+.home-img img:hover{
+    font-size: 1.8rem;
+    font-weight:500;
+    transform:scale(1.05);
+}
+
+.social-icons a{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    width:4rem;
+    height:4rem;
+    background-color:transparent;
+    border:0.2rem solid dodgerblue;
+    font-size:2rem;
+    border-radius:50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+color:white;
+}
+
+.social-icons a:hover{
+   
+    color:black;
+    transform:scale(1.3)translateY(-0.5rem);
+    background-color: dodgerblue;
+    box-shadow: 0 0 25px dodgerblue;
+}
+
+.about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+    width: 100%;
+}
+
+/* Photo with offset frame */
+.about-img{
+    position: relative;
+    flex: 0 0 38%;
+    aspect-ratio: 1 / 1;
+}
+
+.about-img::before{
+    content: "";
+    position: absolute;
+    top: -2rem;
+    left: -2rem;
+    width: 100%;
+    height: 100%;
+    border: 0.2rem solid dodgerblue;  
+    z-index: 0;
+    transition: 0.3s ease;
+}
+
+.about-img img{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.about-img:hover::before{
+    top: -1rem;
+    left: -1rem;
+    box-shadow: 0 0 25px dodgerblue;
+}
+
+/* Text side */
+.about-title{
+    font-size: 5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.about-title span{
+    color: dodgerblue;
+}
+
+.about-line{
+    width: 8rem;
+    height: 0.4rem;
+    background-color: dodgerblue;
+    margin: 1.5rem 0 3rem;
+}
+
+.about-info p{
+    font-size: 1.7rem;
+    line-height: 1.8;
+    color: #d0d0d0;
+    margin-bottom: 3rem;
+}
+
+.about-list{
+    list-style: none;
+}
+
+.about-list li{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.7rem;
+    margin-bottom: 1.8rem;
+}
+
+
+.check{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border: 0.2rem solid dodgerblue;
+    border-radius: 0.4rem;
+    color: dodgerblue;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+
+@media (max-width: 995px){
+    .about-wrapper{
+        flex-direction: column;
+        gap: 6rem;
+    }
+
+    .about-img{
+        flex: none;
+        width: 70%;
+    }
+}
+
+.type{
+    color:dodgerblue;
+}
+
+.skills-content{
+    display:flex;
+    justify-content:center;
+    font-size:3rem;
+}
+
+.heading{
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.heading span{
+    color: dodgerblue;
+}
+
+.services{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12rem;
+    text-align: center;
+}
+
+.skills-scroll{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 3rem;
+    width: 100%;
+    overflow-x: auto;
+    padding: 3rem 1rem 4rem;
+    scroll-snap-type: x mandatory;
+}
+
+.service-card{
+    flex: 0 0 28rem;
+    scroll-snap-align: center;
+    padding: 4rem 3rem;
+    border: 0.2rem solid rgba(30, 144, 255, 0.35);
+    border-radius: 2.5rem;
+    background-color: rgba(30, 144, 255, 0.05);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.service-card:hover{
+    border-color: dodgerblue;
+    background-color: rgba(30, 144, 255, 0.12);
+    transform: translateY(-1rem);
+    box-shadow: 0 0 25px dodgerblue;
+}
+
+.service-icon{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 8rem;
+    border: 0.2rem solid dodgerblue;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+    transition: 0.3s ease;
+}
+
+.service-icon img{
+    width: 4.5rem;
+    height: 4.5rem;
+    object-fit: contain;
+}
+
+.service-card:hover .service-icon{
+    background-color: dodgerblue;
+    box-shadow: 0 0 25px dodgerblue;
+}
+
+.service-card h3{
+    font-size: 2.4rem;
+    color: dodgerblue;
+    margin-bottom: 1rem;
+}
+
+.skills-scroll::-webkit-scrollbar{
+    height: 0.8rem;
+}
+
+.skills-scroll::-webkit-scrollbar-track{
+    background: rgba(30, 144, 255, 0.1);
+    border-radius: 1rem;
+}
+
+.skills-scroll::-webkit-scrollbar-thumb{
+    background: dodgerblue;
+    border-radius: 1rem;
+}
+
+.projects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12rem;
+}
+
+.projects-scroll{
+    display: flex;
+    flex-direction: row;      
+    flex-wrap: nowrap;
+    gap: 3rem;
+    width: 100%;
+    overflow-x: auto;
+    padding: 3rem 1rem 4rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.projects-scroll::-webkit-scrollbar{
+    display: none;
+}
+
+.project-card{
+    flex: 0 0 32rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 3rem;
+    color: white;
+    border: 0.2rem solid rgba(30, 144, 255, 0.35);
+    border-radius: 2.5rem;
+    background-color: rgba(30, 144, 255, 0.05);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.project-card:hover{
+    border-color: dodgerblue;
+    background-color: rgba(30, 144, 255, 0.12);
+    transform: translateY(-1rem);
+    box-shadow: 0 0 25px dodgerblue;
+}
+
+.project-icon{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 8rem;
+    border: 0.2rem solid dodgerblue;
+    border-radius: 50%;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    transition: 0.3s ease;
+}
+
+.project-card:hover .project-icon{
+    background-color: dodgerblue;
+    box-shadow: 0 0 25px dodgerblue;
+}
+
+.project-card h3{
+    font-size: 2.4rem;
+    color: dodgerblue;
+    margin-bottom: 1rem;
+}
+
+.project-card p{
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: #d0d0d0;
+    margin-bottom: 2rem;
+}
+
+.project-link{
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: dodgerblue;
+}
+
+.badges{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12rem;
+    text-align: center;
+}
+
+.badge-scroll{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 3rem;
+    width: 100%;
+    overflow-x: auto;
+    padding: 3rem 1rem 4rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.badge-scroll::-webkit-scrollbar{
+    display: none;
+}
+
+.badges-card{
+    flex: 0 0 28rem;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 3rem;
+    border: 0.2rem solid rgba(30, 144, 255, 0.35);
+    border-radius: 2.5rem;
+    background-color: rgba(30, 144, 255, 0.05);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.badges-card:hover{
+    border-color: dodgerblue;
+    background-color: rgba(30, 144, 255, 0.12);
+    transform: translateY(-1rem);
+    box-shadow: 0 0 25px dodgerblue;
+}
+
+.badges-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 14rem;
+    height: 14rem;
+    border: 0.2rem solid dodgerblue;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.badges-icon img{
+    width: 10rem;
+    height: 10rem;
+    object-fit: contain;
+}
+
+.badges-card:hover .badges-icon{
+    box-shadow: 0 0 25px dodgerblue;
+}
+
+.badges-card h3{
+    font-size: 2rem;
+    line-height: 1.4;
+    color: dodgerblue;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12rem;
+}
+
+.contact-wrapper{
+    display: flex;
+    gap: 5rem;
+    width: 100%;
+    align-items: stretch;
+}
+
+.contact-info{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.contact-card{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.5rem 3rem;
+    color: white;
+    border: 0.2rem solid rgba(30, 144, 255, 0.35);
+    border-radius: 2.5rem;
+    background-color: rgba(30, 144, 255, 0.05);
+    transition: 0.3s ease;
+}
+
+.contact-card:hover{
+    border-color: dodgerblue;
+    background-color: rgba(30, 144, 255, 0.12);
+    transform: translateY(-0.5rem);
+    box-shadow: 0 0 25px dodgerblue;
+}
+
+.contact-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 6rem;
+    height: 6rem;
+    border: 0.2rem solid dodgerblue;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    transition: 0.3s ease;
+}
+
+.contact-card:hover .contact-icon{
+    background-color: dodgerblue;
+    box-shadow: 0 0 25px dodgerblue;
+}
+
+.contact-card h3{
+    font-size: 2rem;
+    color: dodgerblue;
+    margin-bottom: 0.3rem;
+}
+
+.contact-card p{
+    font-size: 1.6rem;
+    color: #d0d0d0;
+}
+
+.contact-form{
+    flex: 1.3;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width: 100%;
+    padding: 1.8rem 2.5rem;
+    font-size: 1.6rem;
+    color: white;
+    background-color: rgba(30, 144, 255, 0.05);
+    border: 0.2rem solid rgba(30, 144, 255, 0.35);
+    border-radius: 1.5rem;
+    transition: 0.3s ease;
+    resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+    color: #888;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color: dodgerblue;
+    box-shadow: 0 0 15px dodgerblue;
+}
+
+.contact-btn{
+    align-self: flex-start;
+    padding: 1.5rem 4rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+    background-color: dodgerblue;
+    border-radius: 5rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.contact-btn:hover{
+    transform: translateY(-0.5rem);
+    box-shadow: 0 0 25px dodgerblue;
+}
+
+@media (max-width: 995px){
+    .contact-wrapper{
+        flex-direction: column;
+    }
+}
+
+.footer{
+    display: flex;
+    justify-content: center;   
+    align-items: center;       
+    text-align: center;
+    padding: 3rem 9%;
+    border-top: 0.2rem solid rgba(30, 144, 255, 0.35);
+}
+
+.footer p{
+    font-size: 1.6rem;
+    color: #d0d0d0;
+}
+
+@media (max-width: 995px){
+    .home .home-content h1{
+        font-size: 2.6rem;
+        line-height: 1.3;
+    }
+
+    .name-line{
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px){
+    .home .home-content h1{
+        font-size: 2.3rem;
+    }
+}
+
+.reveal{
+    opacity: 0;
+    transform: translateY(6rem);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.reveal.delay-1{ transition-delay: 0.1s; }
+.reveal.delay-2{ transition-delay: 0.2s; }
+.reveal.delay-3{ transition-delay: 0.3s; }
+
+
+@media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    .reveal{
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}

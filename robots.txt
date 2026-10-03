@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://banagalestephenrockwel-collab.github.io/My-Portfolio/sitemap.xml
