@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stephen Banagale | Web Developer Portfolio</title>
+    <meta name="description" content="Portfolio of Stephen Rockwel Banagale, a BS Information Technology student at Laguna State Polytechnic University. Skills in HTML, CSS, JavaScript, Java, C#, and Python.">
+    <meta name="author" content="Stephen Rockwel Banagale">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://banagalestephenrockwel-collab.github.io/Rockwel-Portfolio/">
+
+    <meta property="og:title" content="Stephen Rockwel Banagale | Web Developer Portfolio">
+    <meta property="og:description" content="BSIT student and aspiring web developer.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://banagalestephenrockwel-collab.github.io/Rockwel-Portfolio/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        try {
+            document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');
+        } catch (e) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="particles"></canvas>
+
+    <div class="progress-bar"></div>
+
+    <header>
+        <a href="#home" class="logo">Rockwel</a>
+
+        <nav>
+            <a href="#home" class="active">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#badge">Badges</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark or light mode">🌙</button>
+        <div class="menu-toggle" id="menu-toggle" role="button" tabindex="0" aria-label="Toggle menu">☰</div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-img">
+            <img src="main.png" alt="Profile Image">
+        </div>
+
+        <div class="home-content">
+            <h1>Hi, I'm <span class="text-typing">Stephen Rockwel Banagale</span></h1>
+            <h2><span id="typed">Web Developer | IT STUDENT</span><span class="typed-cursor"></span></h2>
+
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/stephen-rockwel-ba%C3%B1agale-522953428/?isSelfProfile=true" target="_blank" rel="noopener noreferrer"><img src="linkedin-logo.png" alt="LinkedIn" width="25" height="25"></a>
+                <a href="https://github.com/banagalestephenrockwel-collab" target="_blank" rel="noopener noreferrer"><img src="github.png" alt="GitHub" width="25" height="25"></a>
+                <a href="https://www.facebook.com/profile.php?id=61578231022201" target="_blank" rel="noopener noreferrer"><img src="facebook.png" alt="Facebook" width="25" height="25"></a>
+                <a href="https://www.instagram.com/posangggggitimmmm/" target="_blank" rel="noopener noreferrer"><img src="instagram.png" alt="Instagram" width="25" height="25"></a>
+                <a href="https://x.com/stipenpogi" target="_blank" rel="noopener noreferrer"><img src="twitter.png" alt="Twitter" width="25" height="25"></a>
+            </div>
+
+            <a href="#contact" class="hero-btn">Contact Me</a>
+            <a href="#projects" class="hero-btn hero-btn-outline">My Projects</a>
+        </div>
+    </section>
+
+    <section class="services" id="skills">
+        <h2 class="heading">My <span>Expertise</span></h2>
+
+        <div class="skills-scroll">
+            <div class="skills-track">
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="web.png" alt="Web logo">
+                    </div>
+                    <h3>HTML</h3>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java logo">
+                    </div>
+                    <h3>Java</h3>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C# logo">
+                    </div>
+                    <h3>C#</h3>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS logo">
+                    </div>
+                    <h3>CSS</h3>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="java-script.png" alt="JavaScript logo">
+                    </div>
+                    <h3>JavaScript</h3>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo">
+                    </div>
+                    <h3>Python</h3>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-wrapper">
+
+            <div class="about-img">
+                <img src="me.jpg" alt="Rockwel" loading="lazy">
+            </div>
+
+            <div class="about-info">
+                <h2 class="about-title">About <span>Me</span></h2>
+                <div class="about-line"></div>
+
+                <p>
+                    I am a student at Laguna State Polytechnic University, pursuing a degree
+                    in Bachelor of Science in Information Technology. I am passionate about web
+                    development and constantly strive to enhance my skills in this field.
+                </p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Elementary</h4>
+                        <p>Bitin Elementary School</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>HighSchool</h4>
+                        <p>Bitin Integrated National HighSchool | Sto.Tomas Senior HighSchool</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>College</h4>
+                        <p>Laguna State Polytechnic University</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2 class="heading">My <span>Projects</span></h2>
+
+        <div class="project-carousel" id="project-carousel">
+            <div class="project-viewport">
+                <div class="project-track" id="project-track">
+
+                    <div class="project-detail">
+                        <div class="detail-left">
+                            <div class="terminal" data-app="portfolio">
+                                <div class="terminal-bar">
+                                    <span class="terminal-dot red"></span>
+                                    <span class="terminal-dot yellow"></span>
+                                    <span class="terminal-dot green"></span>
+                                    <span class="terminal-name">portfolio</span>
+                                </div>
+
+                                <div class="terminal-log" aria-live="polite">
+                                    <p class="terminal-title">═══ Portfolio Website ═══</p>
+                                    <p>Choose a command to begin.</p>
+                                </div>
+
+                                <div class="terminal-actions">
+                                    <button type="button" class="terminal-btn" data-op="home">Home</button>
+                                    <button type="button" class="terminal-btn" data-op="about">About</button>
+                                    <button type="button" class="terminal-btn" data-op="project">Projects</button>
+                                    <button type="button" class="terminal-btn" data-op="services">Services</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="detail-info">
+                            <span class="detail-label">Website</span>
+                            <h3>Portfolio Website</h3>
+                            <p>First website using HTML and CSS.</p>
+                            <div class="detail-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                            </div>
+                            <a href="https://banagalestephenrockwel-collab.github.io/My-Portfolio/" target="_blank" rel="noopener" class="hero-btn">Live Demo</a>
+                        </div>
+                    </div>
+
+                    <div class="project-detail">
+                        <div class="detail-left">
+                            <div class="terminal" data-app="temperature">
+                                <div class="terminal-bar">
+                                    <span class="terminal-dot red"></span>
+                                    <span class="terminal-dot yellow"></span>
+                                    <span class="terminal-dot green"></span>
+                                    <span class="terminal-name">temperature</span>
+                                </div>
+
+                                <div class="terminal-log" aria-live="polite">
+                                    <p class="terminal-title">═══ Temperature Converter ═══</p>
+                                    <p>Choose an operation to begin.</p>
+                                    <input type="text" class="terminal-input" inputmode="decimal" autocomplete="off" aria-label="Enter a number" hidden>
+                                </div>
+
+                                <div class="terminal-actions">
+                                    <button type="button" class="terminal-btn" data-op="c2f">°C → °F</button>
+                                    <button type="button" class="terminal-btn" data-op="f2c">°F → °C</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="detail-info">
+                            <span class="detail-label">Console App</span>
+                            <h3>Temperature Converter</h3>
+                            <p>Celsius and Fahrenheit converter, ported from a C# console.</p>
+                            <div class="detail-tags">
+                                <span>C#</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <a href="temperature-converter.html" target="_blank" rel="noopener" class="hero-btn">Live Demo</a>
+                        </div>
+                    </div>
+
+                    <div class="project-detail">
+                        <div class="detail-left">
+                            <div class="terminal" data-app="calculator">
+                                <div class="terminal-bar">
+                                    <span class="terminal-dot red"></span>
+                                    <span class="terminal-dot yellow"></span>
+                                    <span class="terminal-dot green"></span>
+                                    <span class="terminal-name">calculator</span>
+                                </div>
+
+                                <div class="terminal-log" aria-live="polite">
+                                    <p class="terminal-title">═══ Simple Calculator ═══</p>
+                                    <p>Choose an operation to begin.</p>
+                                    <input type="text" class="terminal-input" inputmode="decimal" autocomplete="off" aria-label="Enter a number" hidden>
+                                </div>
+
+                                <div class="terminal-actions">
+                                    <button type="button" class="terminal-btn" data-op="add">Add</button>
+                                    <button type="button" class="terminal-btn" data-op="subtract">Subtract</button>
+                                    <button type="button" class="terminal-btn" data-op="multiply">Multiply</button>
+                                    <button type="button" class="terminal-btn" data-op="divide">Divide</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="detail-info">
+                            <span class="detail-label">Console App</span>
+                            <h3>Simple Calculator</h3>
+                            <p>A C# calculator application designed to perform basic arithmetic operations.</p>
+                            <div class="detail-tags">
+                                <span>C#</span>
+                                <span>.NET</span>
+                            </div>
+                            <a href="simple-calculator.html" class="hero-btn">Live Demo</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="project-pager">
+                <div class="pager-dots" id="pager-dots"></div>
+
+                <div class="pager-controls">
+                    <button type="button" class="pager-btn" id="pager-prev" aria-label="Previous project">&#8249;</button>
+                    <span class="pager-count" id="pager-count" aria-live="polite">01 / 03</span>
+                    <button type="button" class="pager-btn" id="pager-next" aria-label="Next project">&#8250;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="badges" id="badge">
+        <h2 class="heading">My <span>Badges</span></h2>
+
+        <div class="badge-scroll">
+            <div class="badge-track">
+
+                <div class="badges-card">
+                    <div class="badges-icon">
+                        <img src="pe1.png" alt="Python Essentials 1">
+                    </div>
+                    <h3>Python Essentials 1</h3>
+                </div>
+
+                <div class="badges-card">
+                    <div class="badges-icon">
+                        <img src="pe2.png" alt="Python Essentials 2">
+                    </div>
+                    <h3>Python Essentials 2</h3>
+                </div>
+
+                <div class="badges-card">
+                    <div class="badges-icon">
+                        <img src="introduction-to-data-science.png" alt="Introduction to Data Science">
+                    </div>
+                    <h3>Introduction to Data Science</h3>
+                </div>
+
+                <div class="badges-card">
+                    <div class="badges-icon">
+                        <img src="enterprise-design-thinking-practitioner.png" alt="Enterprise Design Thinking Practitioner">
+                    </div>
+                    <h3>Enterprise Design Thinking Practitioner</h3>
+                </div>
+
+                <div class="badges-card">
+                    <div class="badges-icon">
+                        <img src="javascript-essentials-1.png" alt="JavaScript Essentials1">
+                    </div>
+                    <h3>JavaScript Essentials 1</h3>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+
+        <div class="contact-wrapper">
+
+            <div class="contact-info">
+                <a href="mailto:banagalestephenrockwel@gmail.com" class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <div>
+                        <h3>Email</h3>
+                        <p>banagalestephenrockwel@gmail.com</p>
+                    </div>
+                </a>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h3>Location</h3>
+                        <p>Laguna, Philippines</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contact-form" action="https://formspree.io/f/mvkgepyo" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+                <button type="submit" class="contact-btn">Send Message</button>
+                <p class="form-status" id="form-status"></p>
+            </form>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 Stephen Rockwel Banagale. All rights reserved.</p>
+    </footer>
+
+    <a href="#home" class="to-top" aria-label="Back to top">↑</a>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+        const nav = document.querySelector('nav');
+        const menuToggle = document.getElementById('menu-toggle');
+        const progressBar = document.querySelector('.progress-bar');
+        const toTop = document.querySelector('.to-top');
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            themeToggle.textContent = theme === 'dark' ? '🌙' : '☀️';
+            try { localStorage.setItem('theme', theme); } catch (e) {}
+        }
+
+        applyTheme(document.documentElement.getAttribute('data-theme') || 'dark');
+
+        themeToggle.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            applyTheme(current === 'dark' ? 'light' : 'dark');
+        });
+
+        function toggleMenu() {
+            const open = nav.classList.toggle('active');
+            menuToggle.textContent = open ? '✕' : '☰';
+        }
+
+        function closeMenu() {
+            nav.classList.remove('active');
+            menuToggle.textContent = '☰';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuToggle.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleMenu();
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            let current = 'home';
+
+            sections.forEach(sec => {
+                if (window.scrollY >= sec.offsetTop - 200) {
+                    current = sec.getAttribute('id');
+                }
+            });
+
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 5) {
+                current = 'contact';
+            }
+
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+            });
+
+            const h = document.documentElement;
+            const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+            progressBar.style.width = pct + '%';
+
+            toTop.classList.toggle('show', window.scrollY > 500);
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                closeMenu();
+            });
+        });
+
+        const skillsTrack = document.querySelector('.skills-track');
+        skillsTrack.innerHTML += skillsTrack.innerHTML;
+
+        const badgeTrack = document.querySelector('.badge-track');
+        badgeTrack.innerHTML += badgeTrack.innerHTML;
+
+        const revealItems = document.querySelectorAll(
+            '.heading, .home-img, .home-content, .about-img, .about-info, .project-carousel, .contact-card, .contact-form'
+        );
+
+        revealItems.forEach(el => el.classList.add('reveal'));
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                entry.target.classList.toggle('show', entry.isIntersecting);
+            });
+        }, { threshold: 0.15 });
+
+        revealItems.forEach(el => observer.observe(el));
+
+        const timeline = document.querySelector('.timeline');
+
+        new IntersectionObserver((entries) => {
+            timeline.classList.toggle('play', entries[0].isIntersecting);
+        }, { threshold: 0.6 }).observe(timeline);
+
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let particles = [];
+        let lastWidth = 0;
+
+        function initParticles() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            lastWidth = window.innerWidth;
+
+            const count = Math.min(80, Math.floor((canvas.width * canvas.height) / 15000));
+
+            particles = Array.from({ length: count }, () => ({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 0.6,
+                vy: (Math.random() - 0.5) * 0.6,
+                r: Math.random() * 2 + 1
+            }));
+        }
+
+        function drawParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach((p, i) => {
+                if (!reduceMotion) {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+                }
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(30, 144, 255, 0.8)';
+                ctx.fill();
+
+                for (let j = i + 1; j < particles.length; j++) {
+                    const q = particles[j];
+                    const dist = Math.hypot(p.x - q.x, p.y - q.y);
+                    if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(q.x, q.y);
+                        ctx.strokeStyle = `rgba(30, 144, 255, ${0.25 * (1 - dist / 120)})`;
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+                    }
+                }
+            });
+        }
+
+        function animateParticles() {
+            drawParticles();
+            if (!reduceMotion) requestAnimationFrame(animateParticles);
+        }
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth !== lastWidth) {
+                initParticles();
+            } else {
+                canvas.height = window.innerHeight;
+            }
+        });
+
+        initParticles();
+        animateParticles();
+
+        const typedEl = document.getElementById('typed');
+        const roles = ['Web Developer', 'IT Student'];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+
+        function typeRole() {
+            const word = roles[roleIndex];
+            charIndex += deleting ? -1 : 1;
+            typedEl.textContent = word.slice(0, charIndex);
+
+            let delay = deleting ? 50 : 100;
+
+            if (!deleting && charIndex === word.length) {
+                deleting = true;
+                delay = 1500;
+            } else if (deleting && charIndex === 0) {
+                deleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                delay = 400;
+            }
+
+            setTimeout(typeRole, delay);
+        }
+
+        function startTyping() {
+            if (reduceMotion) return;
+            typedEl.textContent = '';
+            typeRole();
+        }
+
+        startTyping();
+
+        const projectTrack = document.getElementById('project-track');
+        const projectSlides = Array.from(projectTrack.children);
+        const pagerDots = document.getElementById('pager-dots');
+        const pagerCount = document.getElementById('pager-count');
+        const pagerPrev = document.getElementById('pager-prev');
+        const pagerNext = document.getElementById('pager-next');
+        const projectCarousel = document.getElementById('project-carousel');
+        let slideIndex = 0;
+
+        projectSlides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'pager-dot';
+            dot.setAttribute('aria-label', 'Go to project ' + (i + 1));
+            dot.addEventListener('click', () => goToSlide(i));
+            pagerDots.appendChild(dot);
+        });
+
+        const dotButtons = Array.from(pagerDots.children);
+
+        function pad(n) {
+            return String(n).padStart(2, '0');
+        }
+
+        function goToSlide(i) {
+            slideIndex = (i + projectSlides.length) % projectSlides.length;
+            projectTrack.style.transform = 'translateX(-' + slideIndex * 100 + '%)';
+            pagerCount.textContent = pad(slideIndex + 1) + ' / ' + pad(projectSlides.length);
+
+            dotButtons.forEach((d, k) => d.classList.toggle('active', k === slideIndex));
+            projectSlides.forEach((s, k) => {
+                s.inert = k !== slideIndex;
+                s.setAttribute('aria-hidden', k !== slideIndex ? 'true' : 'false');
+            });
+        }
+
+        pagerPrev.addEventListener('click', () => goToSlide(slideIndex - 1));
+        pagerNext.addEventListener('click', () => goToSlide(slideIndex + 1));
+
+        let touchStartX = 0;
+
+        projectCarousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].clientX;
+        }, { passive: true });
+
+        projectCarousel.addEventListener('touchend', (e) => {
+            const diff = e.changedTouches[0].clientX - touchStartX;
+            if (Math.abs(diff) > 60) goToSlide(slideIndex + (diff < 0 ? 1 : -1));
+        }, { passive: true });
+
+        goToSlide(0);
+
+        const SYMBOLS = { add: '+', subtract: '−', multiply: '×', divide: '÷' };
+
+        function fmt(n) {
+            return String(Number(n.toFixed(2)));
+        }
+
+        const TERMINALS = {
+            portfolio: {
+                lines: {
+                    about: ['Stephen Rockwel Banagale', 'BSIT student and aspiring web developer.'],
+                    skills: ['HTML, CSS, JavaScript', 'Java, C#, Python'],
+                    education: ['Laguna State Polytechnic University', 'BS Information Technology'],
+                    contact: ['banagalestephenrockwel@gmail.com', 'Laguna, Philippines']
+                }
+            },
+            temperature: {
+                steps: ['Enter temperature:'],
+                run(op, nums) {
+                    const n = nums[0];
+                    if (op === 'c2f') {
+                        if (n < -273.15) return { error: 'Below absolute zero (−273.15 °C).' };
+                        return { text: fmt(n) + ' °C = ' + fmt(n * 9 / 5 + 32) + ' °F' };
+                    }
+                    if (n < -459.67) return { error: 'Below absolute zero (−459.67 °F).' };
+                    return { text: fmt(n) + ' °F = ' + fmt((n - 32) * 5 / 9) + ' °C' };
+                }
+            },
+            calculator: {
+                steps: ['Enter first number:', 'Enter second number:'],
+                run(op, nums) {
+                    const a = nums[0];
+                    const b = nums[1];
+                    if (op === 'divide' && b === 0) return { error: 'Cannot divide by zero.' };
+                    const r = op === 'add' ? a + b
+                            : op === 'subtract' ? a - b
+                            : op === 'multiply' ? a * b
+                            : a / b;
+                    return { text: a + ' ' + SYMBOLS[op] + ' ' + b + ' = ' + Number(r.toPrecision(12)) };
+                }
+            }
+        };
+
+        document.querySelectorAll('.terminal').forEach(term => {
+            const app = TERMINALS[term.dataset.app];
+            const log = term.querySelector('.terminal-log');
+            const input = term.querySelector('.terminal-input');
+            let op = null;
+            let nums = [];
+
+            function say(text, cls) {
+                const p = document.createElement('p');
+                p.textContent = text;
+                if (cls) p.className = cls;
+                log.insertBefore(p, input);
+                log.scrollTop = log.scrollHeight;
+            }
+
+            function finish() {
+                op = null;
+                nums = [];
+                input.value = '';
+                input.hidden = true;
+                say('Choose an operation to begin.');
+            }
+
+            term.querySelectorAll('.terminal-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    say('> ' + btn.textContent);
+
+                    if (app.lines) {
+                        app.lines[btn.dataset.op].forEach(line => say(line));
+                        return;
+                    }
+
+                    op = btn.dataset.op;
+                    nums = [];
+                    say(app.steps[0]);
+                    input.hidden = false;
+                    input.value = '';
+                    input.focus();
+                });
+            });
+
+            if (!input) return;
+
+            input.addEventListener('keydown', (e) => {
+                if (e.key !== 'Enter') return;
+
+                const raw = input.value.trim().replace(',', '.');
+                const n = Number(raw);
+
+                if (raw === '' || !Number.isFinite(n)) {
+                    say('Invalid input. Enter a number:', 'terminal-error');
+                    return;
+                }
+
+                say('> ' + raw);
+                input.value = '';
+                nums.push(n);
+
+                if (nums.length < app.steps.length) {
+                    say(app.steps[nums.length]);
+                    return;
+                }
+
+                const result = app.run(op, nums);
+                if (result.error) say(result.error, 'terminal-error');
+                else say(result.text, 'terminal-result');
+                finish();
+            });
+        });
+
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+        const submitBtn = contactForm.querySelector('.contact-btn');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            formStatus.className = 'form-status';
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    formStatus.textContent = '✅ Message sent! Thank you.';
+                    formStatus.className = 'form-status show success';
+                    contactForm.reset();
+                } else {
+                    throw new Error('Failed');
+                }
+            } catch (error) {
+                formStatus.textContent = '❌ Something went wrong. Please try again.';
+                formStatus.className = 'form-status show error';
+            }
+
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+
+            setTimeout(() => {
+                formStatus.classList.remove('show');
+            }, 6000);
+        });
+    </script>
+</body>
+</html>
