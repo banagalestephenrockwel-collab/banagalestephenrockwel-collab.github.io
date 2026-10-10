@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator | Stephen Banagale</title>
+    <meta name="description" content="Simple calculator with add, subtract, multiply, and divide.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        try {
+            document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');
+        } catch (e) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg: #000;
+            --text: #fff;
+            --muted: #d0d0d0;
+            --placeholder: #888;
+            --header-bg: rgba(0, 0, 0, 0.85);
+            --header-solid: #000;
+            --card-bg: rgba(30, 144, 255, 0.05);
+            --card-hover: rgba(30, 144, 255, 0.12);
+            --card-border: rgba(30, 144, 255, 0.35);
+            --card-shadow: 0 0 30px rgba(30, 144, 255, 0.15);
+            --scroll-track: #050a14;
+            --blob-1: rgba(30, 144, 255, 0.10);
+            --blob-2: rgba(30, 144, 255, 0.07);
+            --blob-3: rgba(30, 144, 255, 0.08);
+        }
+
+        [data-theme="light"] {
+            --bg: #f3f8ff;
+            --text: #0b1a2e;
+            --muted: #44546a;
+            --placeholder: #7a8aa0;
+            --header-bg: rgba(255, 255, 255, 0.85);
+            --header-solid: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.75);
+            --card-hover: rgba(30, 144, 255, 0.12);
+            --card-border: rgba(30, 144, 255, 0.4);
+            --card-shadow: 0 8px 25px rgba(30, 144, 255, 0.15);
+            --scroll-track: #e3eefc;
+            --blob-1: rgba(30, 144, 255, 0.07);
+            --blob-2: rgba(0, 212, 255, 0.05);
+            --blob-3: rgba(30, 144, 255, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h1, h2, h3, .logo, .display-value {
+            font-family: 'Space Grotesk', 'Poppins', sans-serif;
+        }
+
+        html { font-size: 62.5%; scroll-behavior: smooth; }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-color: var(--bg);
+            color: var(--text);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 15% 10%, var(--blob-1), transparent 30%),
+                radial-gradient(circle at 65% 50%, var(--blob-2), transparent 30%),
+                radial-gradient(circle at 20% 60%, var(--blob-3), transparent 30%);
+        }
+
+        ::-webkit-scrollbar { width: 1rem; }
+        ::-webkit-scrollbar-track { background: var(--scroll-track); }
+        ::-webkit-scrollbar-thumb { background: dodgerblue; border-radius: 1rem; }
+
+        a:focus-visible, button:focus-visible, input:focus-visible {
+            outline: 0.3rem solid dodgerblue;
+            outline-offset: 0.4rem;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 9%;
+            background-color: var(--header-bg);
+            backdrop-filter: blur(6px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 3rem;
+            color: dodgerblue;
+            font-weight: 800;
+            transition: 0.5s ease;
+            text-shadow: 0 0 15px rgba(30, 144, 255, 0.6);
+        }
+
+        .logo:hover { transform: scale(1.1); }
+
+        .header-actions { display: flex; align-items: center; gap: 2rem; }
+
+        .back-link {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--text);
+            padding: 1rem;
+            border-bottom: 3px solid transparent;
+            transition: 0.3s ease;
+        }
+
+        .back-link:hover { color: dodgerblue; border-bottom: 3px solid dodgerblue; }
+
+        .theme-toggle {
+            width: 4.2rem;
+            height: 4.2rem;
+            font-size: 2rem;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            border: 0.2rem solid dodgerblue;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background: dodgerblue;
+            box-shadow: 0 0 20px dodgerblue;
+            transform: rotate(20deg);
+        }
+
+        main {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 12rem 5% 6rem;
+        }
+
+        .heading { font-size: 5rem; text-align: center; margin-bottom: 1.5rem; }
+
+        .heading span {
+            color: dodgerblue;
+            text-shadow: 0 0 15px rgba(30, 144, 255, 0.6);
+        }
+
+        .subtitle { font-size: 1.6rem; color: var(--muted); text-align: center; margin-bottom: 4rem; }
+
+        .layout {
+            display: flex;
+            gap: 4rem;
+            width: 100%;
+            max-width: 46rem;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 0;
+            padding: 3.5rem 3rem;
+            border: 0.2rem solid var(--card-border);
+            border-radius: 2.5rem;
+            background-color: var(--card-bg);
+            backdrop-filter: blur(8px);
+            box-shadow: var(--card-shadow);
+            transition: 0.3s ease;
+        }
+
+        .card:hover { border-color: dodgerblue; box-shadow: 0 0 25px dodgerblue; }
+
+        .card h2 { font-size: 2.4rem; color: dodgerblue; margin-bottom: 2.5rem; }
+
+        .display {
+            text-align: right;
+            padding: 2rem 2.5rem;
+            margin-bottom: 2.5rem;
+            border: 0.2rem solid var(--card-border);
+            border-radius: 1.5rem;
+            background-color: var(--card-hover);
+            min-height: 11rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            gap: 0.5rem;
+            overflow: hidden;
+        }
+
+        .display-expr {
+            font-family: 'Courier New', monospace;
+            font-size: 1.5rem;
+            color: var(--muted);
+            min-height: 2rem;
+            word-break: break-all;
+        }
+
+        .display-value {
+            font-size: 4rem;
+            font-weight: 700;
+            color: dodgerblue;
+            text-shadow: 0 0 15px rgba(30, 144, 255, 0.6);
+            word-break: break-all;
+            line-height: 1.15;
+        }
+
+        .display-value.is-error {
+            font-size: 2.2rem;
+            color: #ff4d4d;
+            text-shadow: none;
+        }
+
+        .keys {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .key {
+            padding: 1.5rem 0;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--text);
+            background-color: var(--card-bg);
+            border: 0.2rem solid var(--card-border);
+            border-radius: 1.5rem;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .key:hover {
+            border-color: dodgerblue;
+            background-color: var(--card-hover);
+            transform: translateY(-0.3rem);
+            box-shadow: 0 0 15px dodgerblue;
+        }
+
+        .key:active { transform: translateY(0); }
+
+        .key.op { color: dodgerblue; border-color: dodgerblue; }
+
+        .key.op.active { background: dodgerblue; color: #fff; }
+
+        .key.eq { background: dodgerblue; color: #fff; border-color: dodgerblue; }
+
+        .key.wide { grid-column: span 2; }
+
+        .footer {
+            text-align: center;
+            padding: 3rem 9%;
+            border-top: 0.2rem solid var(--card-border);
+            font-size: 1.6rem;
+            color: var(--muted);
+        }
+
+        @media (max-width: 995px) {
+            header { padding: 1.5rem 5%; background-color: var(--header-solid); }
+            .logo { font-size: 2.6rem; }
+            .header-actions { gap: 1.2rem; }
+            .back-link { display: inline-block; font-size: 1.4rem; padding: 0.6rem; white-space: nowrap; }
+            .theme-toggle { width: 3.8rem; height: 3.8rem; font-size: 1.8rem; }
+            .layout { flex-direction: column; align-items: stretch; }
+        }
+
+        @media (max-width: 600px) {
+            .heading { font-size: 3.4rem; }
+            .card { padding: 2.5rem 1.8rem; }
+            .display-value { font-size: 3.2rem; }
+            .key { font-size: 2rem; padding: 1.3rem 0; }
+            .footer { font-size: 1.3rem; }
+        }
+
+        @media (max-width: 480px) {
+            .logo { font-size: 2.2rem; }
+            .header-actions { gap: 0.8rem; }
+            .back-link { font-size: 1.2rem; padding: 0.4rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            * { transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Rockwel</a>
+        <div class="header-actions">
+            <a href="index.html#projects" class="back-link">← Back to Portfolio</a>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark or light mode">🌙</button>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="heading">Simple <span>Calculator</span></h1>
+        <p class="subtitle">Add, subtract, multiply, and divide.</p>
+
+        <div class="layout">
+
+            <section class="card" aria-label="Calculator">
+                <h2>Calculator</h2>
+
+                <div class="display" aria-live="polite">
+                    <span class="display-expr" id="expr"></span>
+                    <span class="display-value" id="screen">0</span>
+                </div>
+
+                <div class="keys" id="keys">
+                    <button class="key" data-action="clear">C</button>
+                    <button class="key" data-action="back" aria-label="Backspace">⌫</button>
+                    <button class="key" data-action="sign" aria-label="Toggle sign">±</button>
+                    <button class="key op" data-op="/" aria-label="Divide">÷</button>
+
+                    <button class="key" data-digit="7">7</button>
+                    <button class="key" data-digit="8">8</button>
+                    <button class="key" data-digit="9">9</button>
+                    <button class="key op" data-op="*" aria-label="Multiply">×</button>
+
+                    <button class="key" data-digit="4">4</button>
+                    <button class="key" data-digit="5">5</button>
+                    <button class="key" data-digit="6">6</button>
+                    <button class="key op" data-op="-" aria-label="Subtract">−</button>
+
+                    <button class="key" data-digit="1">1</button>
+                    <button class="key" data-digit="2">2</button>
+                    <button class="key" data-digit="3">3</button>
+                    <button class="key op" data-op="+" aria-label="Add">+</button>
+
+                    <button class="key wide" data-digit="0">0</button>
+                    <button class="key" data-action="dot">.</button>
+                    <button class="key eq" data-action="equals">=</button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Stephen Rockwel Banagale. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            themeToggle.textContent = theme === 'dark' ? '🌙' : '☀️';
+            try { localStorage.setItem('theme', theme); } catch (e) {}
+        }
+
+        applyTheme(document.documentElement.getAttribute('data-theme') || 'dark');
+
+        themeToggle.addEventListener('click', () => {
+            applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        });
+
+        const screen = document.getElementById('screen');
+        const expr = document.getElementById('expr');
+        const opKeys = document.querySelectorAll('.key.op');
+        const SYMBOL = { '+': '+', '-': '−', '*': '×', '/': '÷' };
+
+        let cur = '0';
+        let prev = null;
+        let op = null;
+        let waiting = false;
+        let justEvaluated = false;
+        let hasError = false;
+
+        function compute(a, o, b) {
+            let r;
+            if (o === '+') r = a + b;
+            else if (o === '-') r = a - b;
+            else if (o === '*') r = a * b;
+            else {
+                if (b === 0) return null;
+                r = a / b;
+            }
+            return Number(r.toPrecision(12));
+        }
+
+        function render() {
+            screen.textContent = cur;
+            screen.classList.toggle('is-error', hasError);
+            opKeys.forEach(k => k.classList.toggle('active', waiting && k.dataset.op === op));
+        }
+
+        function resetAll() {
+            cur = '0'; prev = null; op = null;
+            waiting = false; justEvaluated = false; hasError = false;
+            expr.textContent = '';
+        }
+
+        function inputDigit(d) {
+            if (hasError) resetAll();
+            if (waiting || justEvaluated) {
+                cur = '0';
+                waiting = false;
+                justEvaluated = false;
+            }
+            if (cur === '0') cur = d;
+            else if (cur === '-0') cur = '-' + d;
+            else if (cur.replace(/[-.]/g, '').length < 15) cur += d;
+            render();
+        }
+
+        function inputDot() {
+            if (hasError) resetAll();
+            if (waiting || justEvaluated) {
+                cur = '0';
+                waiting = false;
+                justEvaluated = false;
+            }
+            if (!cur.includes('.')) cur += '.';
+            render();
+        }
+
+        function inputOp(o) {
+            if (hasError) return;
+            if (op && !waiting) {
+                const r = compute(prev, op, parseFloat(cur));
+                if (r === null) { showError(); return; }
+                cur = String(r);
+            }
+            prev = parseFloat(cur);
+            op = o;
+            waiting = true;
+            justEvaluated = false;
+            expr.textContent = cur + ' ' + SYMBOL[o];
+            render();
+        }
+
+        function equals() {
+            if (hasError || op === null || waiting) return;
+            const b = parseFloat(cur);
+            const r = compute(prev, op, b);
+            if (r === null) { showError(); return; }
+            expr.textContent = prev + ' ' + SYMBOL[op] + ' ' + b + ' =';
+            cur = String(r);
+            prev = null;
+            op = null;
+            justEvaluated = true;
+            render();
+        }
+
+        function showError() {
+            hasError = true;
+            cur = 'Cannot divide by zero';
+            prev = null;
+            op = null;
+            waiting = false;
+            expr.textContent = '';
+            render();
+        }
+
+        function backspace() {
+            if (hasError) { resetAll(); render(); return; }
+            if (waiting || justEvaluated) return;
+            cur = cur.slice(0, -1);
+            if (cur === '' || cur === '-') cur = '0';
+            render();
+        }
+
+        function toggleSign() {
+            if (hasError || waiting) return;
+            if (cur === '0') return;
+            cur = cur.startsWith('-') ? cur.slice(1) : '-' + cur;
+            render();
+        }
+
+        document.getElementById('keys').addEventListener('click', (e) => {
+            const btn = e.target.closest('button');
+            if (!btn) return;
+            if (btn.dataset.digit !== undefined) inputDigit(btn.dataset.digit);
+            else if (btn.dataset.op) inputOp(btn.dataset.op);
+            else if (btn.dataset.action === 'clear') { resetAll(); render(); }
+            else if (btn.dataset.action === 'back') backspace();
+            else if (btn.dataset.action === 'sign') toggleSign();
+            else if (btn.dataset.action === 'dot') inputDot();
+            else if (btn.dataset.action === 'equals') equals();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'INPUT') return;
+            if (e.ctrlKey || e.metaKey || e.altKey) return;
+            if (/^[0-9]$/.test(e.key)) inputDigit(e.key);
+            else if (e.key === '.' || e.key === ',') inputDot();
+            else if (['+', '-', '*', '/'].includes(e.key)) { e.preventDefault(); inputOp(e.key); }
+            else if (e.key === 'Enter' || e.key === '=') { e.preventDefault(); equals(); }
+            else if (e.key === 'Backspace') backspace();
+            else if (e.key === 'Escape' || e.key === 'Delete') { resetAll(); render(); }
+        });
+
+        render();
+    </script>
+</body>
+</html>
